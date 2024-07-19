@@ -13,7 +13,7 @@ function SocialLink({ text }) {
 const socialLinks = [
   "GitHub",
   "Frontent Mentor",
-  " LinkedIn",
+  "LinkedIn",
   "Twitter",
   "Instagram",
 ];
@@ -56,7 +56,7 @@ function Page() {
           </h2>
         </div>
         <p className="text-white text-sm tracking-tight">
-          "Front-end developer and avid reader."
+          &quot;Front-end developer and avid reader.&quot;
         </p>
         <div className=" w-full h-80 flex flex-col justify-center gap-5">
           {socialLinks.map((socialLink, index) => (

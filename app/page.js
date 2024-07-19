@@ -10,7 +10,7 @@ export default function Home() {
         Front End Mentor challenges
       </h1>
       {challenges.map((challenge, index) => (
-        <MentorCard />
+        <MentorCard key={index} />
       ))}
     </div>
   );
