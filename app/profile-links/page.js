@@ -5,7 +5,7 @@ import { lazy } from "react";
 
 function SocialLink({ text }) {
   return (
-    <div className="bg-stone-600 rounded-lg text-white h-full py-4">
+    <div className="bg-stone-600 rounded-lg text-white h-full py-4 hover:pointer hover:bg-lime-400 hover:text-black transition-all">
       <p className="leading-none block">{text}</p>
     </div>
   );
@@ -38,17 +38,17 @@ function Page() {
   //
   return (
     <div className="bg-stone-800 w-screen h-screen grid place-items-center text-center">
-      <div className="bg-stone-700 w-96 h-fit flex flex-col items-center p-10 gap-5 rounded-lg">
+      <div className="bg-stone-700 w-80 md:w-96 h-fit flex flex-col items-center p-10 gap-5 rounded-lg">
         <div className="relative w-20 h-20 rounded-full">
           <Image
-            className="w-20 bg-gray-300 h-20 rounded-full bg-center"
+            className="w-20 bg-gray-300 h-20 rounded-full"
             fill
             objectFit="cover"
             src="/profile-links/images/avatar-jessica.jpeg"
           />
         </div>
         <div className="flex flex-col gap-0">
-          <h1 className="text-white text-2xl tracking-normal">
+          <h1 className="text-white text-2xl tracking-normal font-semibold">
             Jessica Randall
           </h1>
           <h2 className="text-lime-300 text-xs font-bold">
