@@ -55,7 +55,7 @@ export default function Page() {
             </p>
             <ul className="flex w-full justify-between">
               {Array.from({ length: 5 }).map((_, i) => (
-                <NumberButton number={i + 1} />
+                <NumberButton number={i + 1} key={i} />
               ))}
             </ul>
             <button
