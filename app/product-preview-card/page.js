@@ -16,6 +16,7 @@ function Card() {
           fill
           objectFit="cover"
           className="bg-bottom"
+          alt=""
         />
       </div>
       <div className="md:w-1/2 p-4 h-full flex flex-col gap-3 justify-between">

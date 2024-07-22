@@ -45,6 +45,7 @@ function Page() {
             fill
             objectFit="cover"
             src="/profile-links/images/avatar-jessica.jpeg"
+            alt="Avatar of Jessica"
           />
         </div>
         <div className="flex flex-col gap-0">

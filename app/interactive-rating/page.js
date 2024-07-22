@@ -165,7 +165,7 @@ export default function Page() {
             <h3 className="text-center text-xl font-bold">Thank you!</h3>
             <p className="text-gray-400 text-sm text-center">
               We appreciate you taking the time to give a rating. If you ever
-              need more support, don't hesitate to get in touch !
+              need more support, don&apos;t hesitate to get in touch!
             </p>
           </>
         )}
