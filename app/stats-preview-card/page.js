@@ -1,11 +1,13 @@
 import clsx from "clsx";
 import Image from "next/image";
 
-function Stat() {
+function Stat({ stat, description }) {
   return (
     <div className="flex flex-col">
-      <span className="block text-white text-xl font-bold">10</span>
-      <span className="block text-slate-400 uppercase text-sm ">Companies</span>
+      <span className="block text-white text-xl font-bold">{stat}</span>
+      <span className="block text-slate-400 uppercase text-sm ">
+        {description}
+      </span>
     </div>
   );
 }
@@ -43,8 +45,8 @@ function Page() {
             regarding revenue, customer experience, and overall efficiency.
           </p>
           <ul className="flex flex-col lg:flex-row justify-between mt-2">
-            {stats.map(() => (
-              <Stat />
+            {stats.map((item, index) => (
+              <Stat key={index} {...item} />
             ))}
           </ul>
         </div>
