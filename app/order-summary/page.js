@@ -3,7 +3,7 @@ import Image from "next/image";
 
 function Card() {
   return (
-    <div className="bg-white w-80 h-fit overflow-hidden rounded-[20px]">
+    <div className="bg-white w-80 h-fit overflow-hidden rounded-[20px] transition-all">
       <div className="relative h-40 w-full opacity-90">
         <Image
           src="/order-summary/images/illustration-hero.svg"
@@ -21,7 +21,7 @@ function Card() {
         <div className="flex p-3 justify-between w-full items-center bg-indigo-50/60 rounded-xl">
           <div className="flex gap-3">
             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48">
-              <g fill="none" fill-rule="evenodd">
+              <g fill="none" fillRule="evenodd">
                 <circle cx="24" cy="24" r="24" fill="#DFE6FB" />
                 <path
                   fill="#717FA6"
@@ -41,7 +41,10 @@ function Card() {
           </div>
           <div className="text-indigo-600 text-sm"> Change</div>
         </div>
-        <button className="bg-indigo-600 text-white py-2 w-full rounded-xl">
+        <button
+          className="bg-indigo-600 hover:bg-indigo-200 cursor-pointer transition-all shadow-lg shadow-indigo-500/40
+         text-white py-2 w-full rounded-xl"
+        >
           Procceed to Payment
         </button>
         <button className="text-slate-500 font-bold text-sm">
