@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Josefin_Sans } from "next/font/google";
 import clsx from "clsx";
+import { useState } from "react";
 const josefinSans = Josefin_Sans({ subsets: ["latin"] });
 
 function Background({ children }) {
@@ -76,6 +77,7 @@ function Input() {
     "rounded-full"
   );
   //Review added email "id" and "name" props
+  const [value, setValue] = useState("");
   return (
     <div className=" w-[80%] mx-auto relative h-fit">
       <input
@@ -84,6 +86,10 @@ function Input() {
         type="email"
         placeholder="Email Address"
         className={inputStyles}
+        onChange={(e) => {
+          setValue(e.target.value);
+        }}
+        value={value}
       />
       <button
         type="submit"
@@ -124,7 +130,7 @@ function Page() {
         <div className="sm:col-start-1 sm:row-start-2 place-self-center">
           <div className="max-w-80 place-self-center">
             <Content />
-            <form name="contact" method="post" netlify>
+            <form name="contact" method="post" netlify="true" hidden>
               <Input />
             </form>
           </div>
