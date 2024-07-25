@@ -131,7 +131,7 @@ function Page() {
         <div className="sm:col-start-1 sm:row-start-2 place-self-center">
           <div className="max-w-80 place-self-center">
             <Content />
-            <form name="contact" method="post" netlify="true" hidden>
+            <form name="contact" method="post" netlify="true">
               <Input />
             </form>
           </div>
