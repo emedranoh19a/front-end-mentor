@@ -45,14 +45,14 @@ function Content() {
   return (
     <div className={`${josefinSans.className}`}>
       <h1 className=" text-4xl px-10 pt-8 pb-5 text-center uppercase tracking-[10px]">
-        <span className="text-red-950/25 font-light">We're</span>
+        <span className="text-red-950/25 font-light">We&apos;re</span>
         <br /> coming <br />
         soon
       </h1>
       <p className="px-10 mb-5 text-sm text-center text-red-950/40">
-        Hello fellow shoppers! We're currently building out new fashion store.
-        Add your email below to stay up-to-date with announcements and our
-        launch deals.
+        Hello fellow shoppers! We&apos;re currently building out new fashion
+        store. Add your email below to stay up-to-date with announcements and
+        our launch deals.
       </p>
     </div>
   );
