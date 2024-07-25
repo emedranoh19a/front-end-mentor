@@ -70,16 +70,6 @@ function LadyHero() {
   return <div className={styles} />;
 }
 
-const handleFormSubmit = async (event) => {
-  event.preventDefault();
-  const formData = new FormData(event.target);
-  await fetch("/__forms.html", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(formData).toString(),
-  });
-  // Success & error handling should come here
-};
 function Input() {
   const inputStyles = clsx(
     "w-full h-12 py-4 px-6",
@@ -92,7 +82,7 @@ function Input() {
   const [value, setValue] = useState("");
   return (
     <div className=" w-[80%] mx-auto relative h-fit">
-      <form name="contact" onSubmit={handleFormSubmit}>
+      <form name="contact" action="/email-success" method="POST" netlify>
         <input
           id="email"
           name="email"
