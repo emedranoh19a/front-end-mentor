@@ -38,6 +38,8 @@ function CardBody() {
 }
 function CardFooter() {
   //TODO share menu with some code that actually works
+  //TODO set an open state and show amazingly the options.
+  //TODO install framer motion into the project. It may be handy from now on.
   return (
     <div className="mt-6 w-full flex justify-between items-center">
       <div className="flex gap-2 items-center">
