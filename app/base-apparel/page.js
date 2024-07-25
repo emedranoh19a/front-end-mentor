@@ -69,6 +69,17 @@ function LadyHero() {
   );
   return <div className={styles} />;
 }
+
+const handleFormSubmit = async (event) => {
+  event.preventDefault();
+  const formData = new FormData(event.target);
+  await fetch("/__forms.html", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString(),
+  });
+  // Success & error handling should come here
+};
 function Input() {
   const inputStyles = clsx(
     "w-full h-12 py-4 px-6",
@@ -81,35 +92,38 @@ function Input() {
   const [value, setValue] = useState("");
   return (
     <div className=" w-[80%] mx-auto relative h-fit">
-      <input
-        id="email"
-        name="email"
-        type="email"
-        placeholder="Email Address"
-        className={inputStyles}
-        onChange={(e) => {
-          setValue(e.target.value);
-        }}
-        value={value}
-      />
-      <button
-        type="submit"
-        className="absolute shadow-xl shadow-rose-400/25 w-20 right-0 h-full bg-gradient-to-r from-rose-200 to-rose-300 rounded-full cursor-pointer p-3"
-      >
-        <div className="relative w-full h-full flex justify-center items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20">
-            <path
-              fill="none"
-              stroke="#FFF"
-              stroke-width="2"
-              d="M1 1l8.836 8.836L1 18.671"
-            />
-          </svg>
-        </div>
-      </button>
+      <form name="contact" onSubmit={handleFormSubmit}>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="Email Address"
+          className={inputStyles}
+          onChange={(e) => {
+            setValue(e.target.value);
+          }}
+          value={value}
+        />
+        <button
+          type="submit"
+          className="absolute shadow-xl shadow-rose-400/25 w-20 right-0 h-full bg-gradient-to-r from-rose-200 to-rose-300 rounded-full cursor-pointer p-3"
+        >
+          <div className="relative w-full h-full flex justify-center items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20">
+              <path
+                fill="none"
+                stroke="#FFF"
+                stroke-width="2"
+                d="M1 1l8.836 8.836L1 18.671"
+              />
+            </svg>
+          </div>
+        </button>
+      </form>
     </div>
   );
 }
+
 function Page() {
   //TODO: Send an email with netlify forms. Handle errors and verify how Netlify works
   //TODO verify that we can actually send some data.
@@ -131,9 +145,7 @@ function Page() {
         <div className="sm:col-start-1 sm:row-start-2 place-self-center">
           <div className="max-w-80 place-self-center">
             <Content />
-            <form name="contact" method="post" netlify="true">
-              <Input />
-            </form>
+            <Input />
           </div>
         </div>
       </div>
