@@ -69,10 +69,7 @@ function LadyHero() {
   );
   return <div className={styles} />;
 }
-function handleSubmit(e) {
-  e.preventDefault();
-  console.log(process.env.MAILGUN_API_KEY);
-}
+
 function Input() {
   const [status, setStatus] = useState(null);
 
@@ -134,8 +131,8 @@ function Input() {
           //   value={value}
         />
         <button
-          //   type="submit"
-          onClick={handleSubmit}
+          type="submit"
+          onClick={handleFormSubmit}
           className="absolute shadow-xl shadow-rose-400/25 w-20 right-0 h-full bg-gradient-to-r from-rose-200 to-rose-300 rounded-full cursor-pointer p-3"
         >
           <div className="relative w-full h-full flex justify-center items-center">
