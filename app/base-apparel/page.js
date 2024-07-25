@@ -112,9 +112,9 @@ function Input() {
       <form
         name="contact"
         onSubmit={handleFormSubmit}
-        // action="/email-success"
-        // method="POST"
-        // data-netlify="true"
+        action="/email-success"
+        method="POST"
+        data-netlify="true"
       >
         <input type="hidden" name="form-name" value="contact" />
 
