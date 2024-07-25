@@ -82,7 +82,12 @@ function Input() {
   const [value, setValue] = useState("");
   return (
     <div className=" w-[80%] mx-auto relative h-fit">
-      <form name="contact" action="/email-success" method="POST" netlify>
+      <form
+        name="contact"
+        action="/email-success"
+        method="POST"
+        data-netlify="true"
+      >
         <input
           id="email"
           name="email"
