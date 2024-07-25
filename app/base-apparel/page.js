@@ -69,8 +69,13 @@ function LadyHero() {
   );
   return <div className={styles} />;
 }
-
+function handleSubmit(e) {
+  e.preventDefault();
+  console.log(process.env.MAILGUN_API_KEY);
+}
 function Input() {
+  const [status, setStatus] = useState(null);
+
   const inputStyles = clsx(
     "w-full h-12 py-4 px-6",
     "bg-transparent text-red-950/40",
@@ -78,16 +83,45 @@ function Input() {
     "border border-red-950/40",
     "rounded-full"
   );
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      setStatus("pending");
+      setError(null);
+      const myForm = event.target;
+      const formData = new FormData(myForm);
+      const res = await fetch("/__forms.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      });
+      if (res.status === 200) {
+        setStatus("ok");
+      } else {
+        setStatus("error");
+        setError(`${res.status} ${res.statusText}`);
+      }
+    } catch (e) {
+      setStatus("error");
+      setError(`${e}`);
+    }
+  };
+
   //Review added email "id" and "name" props
   const [value, setValue] = useState("");
   return (
     <div className=" w-[80%] mx-auto relative h-fit">
       <form
         name="contact"
-        action="/email-success"
-        method="POST"
-        data-netlify="true"
+        onSubmit={handleFormSubmit}
+        // action="/email-success"
+        // method="POST"
+        // data-netlify="true"
       >
+        <input type="hidden" name="form-name" value="contact" />
+
+        {/* <input form-name="contact" hidden /> */}
         <input
           id="email"
           name="email"
@@ -97,10 +131,11 @@ function Input() {
           onChange={(e) => {
             setValue(e.target.value);
           }}
-          value={value}
+          //   value={value}
         />
         <button
-          type="submit"
+          //   type="submit"
+          onClick={handleSubmit}
           className="absolute shadow-xl shadow-rose-400/25 w-20 right-0 h-full bg-gradient-to-r from-rose-200 to-rose-300 rounded-full cursor-pointer p-3"
         >
           <div className="relative w-full h-full flex justify-center items-center">
