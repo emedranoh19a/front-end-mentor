@@ -38,7 +38,7 @@ function Page() {
   function onSubmit(data) {
     console.log("submiting");
     console.log(data);
-    fetch("/__forms.html", {
+    fetch("../../public/__forms.html", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: {
@@ -48,7 +48,8 @@ function Page() {
     })
       .then((response) => {
         reset();
-        navigate(form.getAttribute("action"));
+        // navigate(form.getAttribute("action"));
+        console.log("Navigating to another page...");
         console.log(response);
       })
       .catch((error) => {
