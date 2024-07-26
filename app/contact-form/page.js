@@ -13,15 +13,18 @@ function Page() {
   const formMethods = useForm();
   const { handleSubmit, reset } = formMethods; //TODO we might need errors here
 
-  const [status, setStatus] = useState(null);
-  const [error, setError] = useState(null);
+  //   const [status, setStatus] = useState(null);
+  //   const [error, setError] = useState(null);
 
+  //Handlers
   //This function works on Netlify!
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+    //TODO Get the errors, return if there are some
+    //TODO
     try {
-      setStatus("pending");
-      setError(null);
+      //   setStatus("pending");
+      //   setError(null);
       const myForm = event.target;
       const formData = new FormData(myForm);
       const res = await fetch("/__forms.html", {
@@ -30,55 +33,17 @@ function Page() {
         body: new URLSearchParams(formData).toString(),
       });
       if (res.status === 200) {
-        setStatus("ok");
+        // setStatus("ok");
       } else {
-        setStatus("error");
-        setError(`${res.status} ${res.statusText}`);
+        // setStatus("error");
+        // setError(`${res.status} ${res.statusText}`);
       }
     } catch (e) {
-      setStatus("error");
-      setError(`${e}`);
+      //   setStatus("error");
+      //   setError(`${e}`);
     }
   };
-  //Handlers
 
-  //   function encode(data) {
-  //     return Object.keys(data)
-  //       .map(
-  //         (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-  //       )
-  //       .join("&");
-  //   }
-  //TODO URL encode your form data in the body of the request
-  //TODO add from-name attibute in the AJAX POST request body.(If you haven't added a hidden form^name input to you JS-rendered form.)
-  async function onSubmit(data) {
-    console.log("submiting");
-    console.log(formData);
-
-    // event.preventDefault();
-    try {
-      setStatus("pending");
-      setError(null);
-      const formData = new URLSearchParams(data).toString();
-
-      //   const myForm = event.target;
-      //   const formData = new FormData(myForm);
-      const res = await fetch("/__forms.html", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: formData,
-      });
-      if (res.status === 200) {
-        setStatus("ok");
-      } else {
-        setStatus("error");
-        setError(`${res.status} ${res.statusText}`);
-      }
-    } catch (e) {
-      setStatus("error");
-      setError(`${e}`);
-    }
-  }
   //TODO ideas de API. (TODAS deberían resultar)
   //Google Spread sheet.
   //Netlify registration OR Vercel registration.
@@ -89,7 +54,7 @@ function Page() {
       <div className="bg-white w-11/12  h-fit p-6">
         <FormProvider {...formMethods}>
           <form
-            onSubmit={handleSubmit(onSubmit)}
+            onSubmit={handleFormSubmit}
             name="contact-form"
             // method="POST"
             // data-netlify="true"
