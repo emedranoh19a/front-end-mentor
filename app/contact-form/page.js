@@ -16,6 +16,7 @@ function Page() {
   const [status, setStatus] = useState(null);
   const [error, setError] = useState(null);
 
+  //This function works on Netlify!
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -50,28 +51,31 @@ function Page() {
   //   }
   //TODO URL encode your form data in the body of the request
   //TODO add from-name attibute in the AJAX POST request body.(If you haven't added a hidden form^name input to you JS-rendered form.)
-  function onSubmit(formData) {
+  async function onSubmit(values) {
     console.log("submiting");
     console.log(formData);
-    reset();
-    // fetch("/__forms.html", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    //   body: new URLSearchParams(formData).toString(),
-    //   //   encode({
-    //   //     "form-name": "contact-form",
-    //   //     ...data,
-    //   //   }),
-    // })
-    //   .then((response) => {
-    //     reset();
-    //     // navigate(form.getAttribute("action"));
-    //     console.log("Navigating to another page...");
-    //     console.log(response);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+
+    // event.preventDefault();
+    try {
+      setStatus("pending");
+      setError(null);
+      //   const myForm = event.target;
+      const formData = new FormData(values);
+      const res = await fetch("/__forms.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      });
+      if (res.status === 200) {
+        setStatus("ok");
+      } else {
+        setStatus("error");
+        setError(`${res.status} ${res.statusText}`);
+      }
+    } catch (e) {
+      setStatus("error");
+      setError(`${e}`);
+    }
   }
   //TODO ideas de API. (TODAS deberían resultar)
   //Google Spread sheet.
@@ -83,7 +87,7 @@ function Page() {
       <div className="bg-white w-11/12  h-fit p-6">
         <FormProvider {...formMethods}>
           <form
-            onSubmit={handleFormSubmit}
+            onSubmit={handleSubmit(onSubmit)}
             name="contact-form"
             // method="POST"
             // data-netlify="true"
