@@ -51,7 +51,7 @@ function Page() {
   //   }
   //TODO URL encode your form data in the body of the request
   //TODO add from-name attibute in the AJAX POST request body.(If you haven't added a hidden form^name input to you JS-rendered form.)
-  async function onSubmit(values, event) {
+  async function onSubmit(data) {
     console.log("submiting");
     console.log(formData);
 
@@ -59,12 +59,14 @@ function Page() {
     try {
       setStatus("pending");
       setError(null);
-      const myForm = event.target;
-      const formData = new FormData(myForm);
+      const formData = new URLSearchParams(data).toString();
+
+      //   const myForm = event.target;
+      //   const formData = new FormData(myForm);
       const res = await fetch("/__forms.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString(),
+        body: formData,
       });
       if (res.status === 200) {
         setStatus("ok");
