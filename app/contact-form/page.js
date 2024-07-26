@@ -35,16 +35,25 @@ function Page() {
   const { handleSubmit, reset } = formMethods; //TODO we might need errors here
 
   //Handlers
+
+  function encode(data) {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  }
+
   function onSubmit(data) {
     console.log("submiting");
     console.log(data);
     fetch("../../public/__forms.html", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: {
+      body: encode({
         "form-name": "contact-form",
         ...data,
-      },
+      }),
     })
       .then((response) => {
         reset();
