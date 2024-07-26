@@ -65,7 +65,7 @@ function Page() {
             name="contact-form"
             method="POST"
             data-netlify="true"
-            action="/"
+            action="/email-success"
             // id="contact-form"
           >
             {/* Note: value of the next input must match the form name */}
