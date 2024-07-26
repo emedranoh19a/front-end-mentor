@@ -41,10 +41,10 @@ function Page() {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
+      body: {
         "form-name": "contact-form",
         ...data,
-      }),
+      },
     })
       .then((response) => {
         reset();
