@@ -1,34 +1,12 @@
 "use client";
 
-import { FormProvider, useForm, useFormContext } from "react-hook-form";
+import FieldGroup from "./FieldGroup";
+import { FormProvider, useForm } from "react-hook-form";
 
-//TODO obtain the data for all the fields.
-//TODO print the values for all the fields in react hook form.
-
-function FieldGroup({ fieldName, label, type, validations = {} }) {
-  //State
-  const {
-    register,
-    formState: { errors },
-  } = useFormContext();
-
-  return (
-    <div>
-      <label htmlFor={fieldName} className="block text-slate-500 text-xs">
-        {label}
-      </label>
-      <input
-        {...register(fieldName, validations)} //This tegister: onChange, onClur, name, ref
-        type="text"
-        id={fieldName}
-        className="border border-slate-300 rounded-lg"
-      />
-    </div>
-  );
-}
 function Grid({ children }) {
   return <div className="grid grid-cols-1 gap-5 py-4">{children}</div>;
 }
+
 function Page() {
   //State
   const formMethods = useForm();
@@ -43,17 +21,19 @@ function Page() {
       )
       .join("&");
   }
-
-  function onSubmit(data) {
+  //TODO URL encode your form data in the body of the request
+  //TODO add from-name attibute in the AJAX POST request body.(If you haven't added a hidden form^name input to you JS-rendered form.)
+  function onSubmit(formData) {
     console.log("submiting");
-    console.log(data);
-    fetch("../../public/__forms.html", {
+    console.log(formData);
+    fetch("/__forms.html", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "form-name": "contact-form",
-        ...data,
-      }),
+      body: new URLSearchParams(formData).toString(),
+      //   encode({
+      //     "form-name": "contact-form",
+      //     ...data,
+      //   }),
     })
       .then((response) => {
         reset();
@@ -65,7 +45,11 @@ function Page() {
         console.log(error);
       });
   }
-
+  //TODO ideas de API. (TODAS deberían resultar)
+  //Google Spread sheet.
+  //Netlify registration OR Vercel registration.
+  //Email sender.
+  //Supabase
   return (
     <div className="w-screen h-screen bg-emerald-50 grid place-content-center">
       <div className="bg-white w-11/12  h-fit p-6">
@@ -73,9 +57,9 @@ function Page() {
           <form
             onSubmit={handleSubmit(onSubmit)}
             name="contact-form"
-            method="POST"
+            method="post"
             data-netlify="true"
-            action="/email-success"
+            // action="/"
             // id="contact-form"
           >
             {/* Note: value of the next input must match the form name */}
