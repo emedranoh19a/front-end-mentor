@@ -14,10 +14,13 @@ function FieldGroup({ fieldName, label, type, validations = {} }) {
 
   return (
     <div>
-      <label className="block text-slate-500 text-xs">{label}</label>
+      <label htmlFor={fieldName} className="block text-slate-500 text-xs">
+        {label}
+      </label>
       <input
-        {...register(fieldName, validations)}
+        {...register(fieldName, validations)} //This tegister: onChange, onClur, name, ref
         type="text"
+        id={fieldName}
         className="border border-slate-300 rounded-lg"
       />
     </div>
@@ -62,11 +65,12 @@ function Page() {
             name="contact-form"
             method="POST"
             data-netlify="true"
-            data-netlify-honeypot="bot-field"
-            className="w-full sm:w-2/3"
-            action="/" //TODO replace with and exit page
-            id="contactForm"
+
+            // id="contact-form"
           >
+            {/* Note: value of the next input must match the form name */}
+            <input type="hidden" name="form-name" value="contact-form" />
+            {/* TODO we may want to build static files. build: next build && next export */}
             <h1 className="text-emerald-950 text-3xl font-bold">Contact Us</h1>
             <Grid>
               <FieldGroup fieldName="firstName" label="First Name" />
