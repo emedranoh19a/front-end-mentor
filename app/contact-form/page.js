@@ -38,7 +38,7 @@ function Page() {
   function onSubmit(data) {
     console.log("submiting");
     console.log(data);
-    fetch("/", {
+    fetch("/__forms.html", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: {
