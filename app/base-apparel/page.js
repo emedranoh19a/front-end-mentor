@@ -98,10 +98,12 @@ function Input() {
       } else {
         setStatus("error");
         setError(`${res.status} ${res.statusText}`);
+        console.log("error");
       }
     } catch (e) {
       setStatus("error");
       setError(`${e}`);
+      console.log(e);
     }
   };
 
