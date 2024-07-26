@@ -72,7 +72,7 @@ function LadyHero() {
 
 function Input() {
   const [status, setStatus] = useState(null);
-
+  const [error, setError] = useState("");
   const inputStyles = clsx(
     "w-full h-12 py-4 px-6",
     "bg-transparent text-red-950/40",
@@ -128,7 +128,7 @@ function Input() {
           onChange={(e) => {
             setValue(e.target.value);
           }}
-          //   value={value}
+          value={value}
         />
         <button
           type="submit"
