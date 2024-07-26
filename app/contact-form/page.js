@@ -32,7 +32,7 @@ function Grid({ children }) {
 function Page() {
   //State
   const formMethods = useForm();
-  const { handleSubmit } = formMethods; //TODO we might need errors here
+  const { handleSubmit, reset } = formMethods; //TODO we might need errors here
 
   //Handlers
   function onSubmit(data) {
@@ -65,7 +65,7 @@ function Page() {
             name="contact-form"
             method="POST"
             data-netlify="true"
-
+            action="/"
             // id="contact-form"
           >
             {/* Note: value of the next input must match the form name */}
