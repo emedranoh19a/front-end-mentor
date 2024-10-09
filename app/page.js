@@ -14,8 +14,7 @@ function LevelTag({ level }) {
     level === 3 && "border-amber-400 text-amber-400",
     level === 4 && "border-red-400 text-red-400",
     level === 5 && "border-indigo-400 text-indigo-400",
-    "",
-    "")
+  )
 
   //Elegir mis colores. 
   //Azul claro
@@ -33,24 +32,10 @@ function LevelTag({ level }) {
 function Status() {
 
 }
-function MentorCard({ link, image, level, levelTag, title, content, status }) {
-  //TODO make a proper navigation. This project is only meant to demonstrate copying skills. It deserves a single netlify thread
-  //    { 
-  //       link: "/recipe-page", 
-  //       image: "", 
-  //       level: "Newbie", 
-  //       title: "Recipe page", 
-  //       content: "Create a recipe page with ingredients, steps, and visuals.", 
-  //       status: "TODO" 
-  //     },
-  //State: 
-  //Style: 
-  //Dataflow:
-  //Handlers:
-  //Note: 
+function MentorCard({ link, image, level, title, content, status }) {
 
   console.log(link)
-  return <div className="relative flex flex-col items-center  w-60 min-h-80 rounded-2xl overflow-hidden shadow-2xl shadow-slate-300/40">
+  return <div className="relative flex flex-col justify-between items-center  w-60 min-h-80 rounded-2xl overflow-hidden shadow-2xl shadow-slate-300/40">
     <div>
 
       <div className="relative h-40 w-full">
@@ -61,11 +46,11 @@ function MentorCard({ link, image, level, levelTag, title, content, status }) {
       </div>
       <div className="w-full h-full p-2">
         <div className="text-md font-bold">{title}</div>
-        <div className="text-xs mb-2"> {content}</div>
+        <div className="text-xs"> {content}</div>
       </div>
     </div>
-    <div>
-      {status === "ok" && <Link href={link} className="bg-slate-800 py-2 px-4 rounded-lg text-white/90">Go!</Link>
+    <div className="self-end mb-4 mr-4">
+      {status === "ok" && <Link href={link} className="transition-colors duartion-300 bg-slate-800 py-2 px-4 rounded-lg text-white/90 hover:text-slate-800 hover:bg-white">Go!</Link>
       }
 
     </div>
@@ -100,11 +85,11 @@ function MentorCard({ link, image, level, levelTag, title, content, status }) {
 
 export default function Home() {
   return (
-    <div className="">
-      <h1 className="text-center text-sans text-6xl">
+    <div className="max-w-screen w-fit mx-auto">
+      <h1 className="text-center text-sans text-3xl my-10">
         Front End Mentor challenges
       </h1>
-      <div className="grid grid-cols-5 gap-4 mx-20 my-10">
+      <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mx-auto place-items-center">
 
         {challengeData.map((challenge, index) => (
           <MentorCard key={index} {...challenge} />
