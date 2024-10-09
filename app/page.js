@@ -1,147 +1,115 @@
-function MentorCard() {
-  //TODO make a proper navigation. This project is only meant to demonstrate copying skills. It deserves a single netlify thread
-  return <>A link for the page</>;
+import clsx from "clsx"
+import Image from "next/image"
+import Link from "next/link"
+import { challengeData } from "./challengeData"
+
+function LevelTag({ level }) {
+
+
+  //Style:
+
+  const tagStyles = clsx("text-[12px] border border-px rounded-full py-1 px-3",
+    level === 1 && "border-fuchsia-400 text-fuchsia-400",
+    level === 2 && "border-sky-400 text-sky-400",
+    level === 3 && "border-amber-400 text-amber-400",
+    level === 4 && "border-red-400 text-red-400",
+    level === 5 && "border-indigo-400 text-indigo-400",
+    "",
+    "")
+
+  //Elegir mis colores. 
+  //Azul claro
+  //Rosa
+  //Amarillo
+  //Rojo
+  //Morado
+
+  //Dataflow:
+  const tagLabel = level === 1 ? "超初級" : level === 2 ? "初級" : level === 3 ? "中級" : level === 4 ? "高級" : level === 5 ? "超高級" : "未知級"
+  return <div className={tagStyles}>
+    {tagLabel}
+  </div>
 }
-const challenges = [
-  //Newbie
-  //TODO: Recipe page
-  //TODO: Social links profile 
-  //TODO: Blog preview card
-  //TODO: FAQ accordion
-  //TODO: Workit landing page
-  //TODO: Results summary component
-  //TODO: Product preview card
-  //TODO: Skilled e-learning landing page
-  //TODO: Interactive rating component
-  //TODO: QR code component
-  //TODO: NFT preview card comonent
-  //TODO: Equalizer landing page
-  //TODO: Order summary component
-  //TODO: Stats preview card component
-  //TODO: Meet landing page
-  //TODO: 3-column preview card component
-  //TODO: Pod request access landing page
-  //TODO: Profile card component
-  //TODO: Social proof section
-  //TODO: Article preview commponent
-  //TODO: Four cad feature section
-  //TODO: Base Apparel coming soon page
-  //TODO: Introcomponent with sign-up form
-  //TODO: Single price grid component
-  //TODO: Ping single column coming soon page
-  //TODO: Huddle landing page with a single introductory section
+function Status() {
 
-  //Junior
-  //TODO: Bento grid
-  //TODO: Product list with cart
-  //TODO: Mortgage repayment calculator
-  //TODO: Contact form
-  //TODO: Newsletter sign-up form with success message.
-  //TODO: Body Mass Index calculator
-  //TODO: Age calculator app
-  //TODO: Single-page deveoper portfolio
-  //TODO: News homepage
-  //TODO: Notifications page
-  //TODO: Interactive card details form
-  //TODO: Single-page design portfolio
-  //TODO: Expenses chart component
-  //TODO: Intro section with dropdownn navigation
-  //TODO: Advice generator app
-  //TODO: Suite landing page
-  //TODO: Art gallery website
-  //TODO: Time tracking dashboard
-  //TODO: GitHub user search app
-  //TODO: Tip calculator app
-  //TODO: Agency landing page
-  //TODO: Typemaster pre-launch landing page
-  //TODO: Blogr landing page
-  //TODO: Crowdfuncing product page
-  //TODO: Interactive pricing component
-  //TODO: Maker pre-launch landing page
-  //TODO: Loopstudios landing page
-  //TODO: Officelite coming soon site
-  //TODO: Testimonials grid section
-  //TODO: Fylo data storage component
-  //TODO: Coding bootcamp testimonials slider
-  //TODO: Social media dashboard with theme switcher
-  //TODO: Insure landing page
-  //TODO: Pricing component with toggle
-  //TODO: Project tracking intro component
-  //TODO: Clipboard landing page
-  //TODO: Huddle landing page with alternating feature blocks
-  //TODO: Fylo dark theme landing page
-  //TODO: Fylo landing page with two column layout
-  //TODO: Huddle landing page with curved sections
+}
+function MentorCard({ link, image, level, levelTag, title, content, status }) {
+  //TODO make a proper navigation. This project is only meant to demonstrate copying skills. It deserves a single netlify thread
+  //    { 
+  //       link: "/recipe-page", 
+  //       image: "", 
+  //       level: "Newbie", 
+  //       title: "Recipe page", 
+  //       content: "Create a recipe page with ingredients, steps, and visuals.", 
+  //       status: "TODO" 
+  //     },
+  //State: 
+  //Style: 
+  //Dataflow:
+  //Handlers:
+  //Note: 
 
-  //Intermediate
-  //TODO: Frontend Quiz app
-  //TODO: Dictionary web app
-  //TODO: Password generator app
-  //TODO: In-browser markdown editor
-  //TODO: Itc Tac Toe game
-  //TODO: Interactive comments section
-  //TODO: Space tourism multi-page website
-  //TODO: E-commerce product page
-  //TODO: Galleria slideshow site
-  //TODO: Planets fact site
-  //TODO: Calculator app
-  //TODO: coffeeroasters subscription site
-  //TODO: Launch cocuntdown timer
-  //TODO: Creatuve agency single-page site
-  //TODO: Todo app
-  //TODO: Clock app
-  //TODO: Room homepage
-  //TODO: IP Address Tracker
-  //TODO: Chat app CSS illustration
-  //TODO: Scoot multi-page website
-  //TODO: Dine restaurant website
-  //TODO: Minimalist portfolio website
-  //TODO: Job listings with filtering
-  //TODO: Easybank landing page
-  //TODO: Manage landing page
-  //TODO: URL shortening API landing
-  //TODO: Bookmark landing page
+  console.log(link)
+  return <div className="relative flex flex-col items-center  w-60 min-h-80 rounded-2xl overflow-hidden shadow-2xl shadow-slate-300/40">
+    <div>
 
-  //Advanced.
-  //TODO: Hangmman game
-  //TODO: Multi-step form
-  //TODO: Connect Four game
-  //TODO:  Entertainment web app
-  //TODO: Memory game
-  //TODO: Pomodoro app
-  //TODO: Devjobs web app
-  //TODO: API multi-page website
-  //TODO: Photosnap multi-page website
-  //TODO: Arch Studio mulkti-page website
-  //TODO: myteam multi-page website
-  //TODO: Rock, Paper, Scissors game
-  //TODO: REST Countries API with color theme witcher
+      <div className="relative h-40 w-full">
+        <Image src={image} fill objectFit="cover" alt={title} />
+        <div className="absolute top-2 right-2  w-fit ">
+          <LevelTag level={level} />
+        </div>
+      </div>
+      <div className="w-full h-full p-2">
+        <div className="text-md font-bold">{title}</div>
+        <div className="text-xs mb-2"> {content}</div>
+      </div>
+    </div>
+    <div>
+      {status === "ok" && <Link href={link} className="bg-slate-800 py-2 px-4 rounded-lg text-white/90">Go!</Link>
+      }
 
-  //Guru: (Paid version) only if this actually works
-  //TODO: Personal finance app
-  //TODO: Link-sharing app
-  //TODO: Kanban task management web app
-  //TODO: Product feedback app
-  //TODO: audiophile e-commerce website
-  //TODO: Invoice app
-  //TODO: Designo multi-page website
-  
-  { link: "/recipe-page", img:"" },
-  { link: "/profile-links", img:"" },
-  { link: "", img:"" },
-  { link: "", img:"" },
-  { link: "", img:"" },
-  { link: "", img:"" },
-  { link: "", img:"" }];
+    </div>
+  </div>
+
+  // <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+  //       <div className="relative w-full h-1/3">
+
+  //       <Image className="rounded-t-lg absolute w-full h-full" src={image} fill objectFit="cover" />
+  //       </div>
+
+  //     <div class="p-5">
+  //         <a href="#">
+  //             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+  //         </a>
+  //         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+  //         <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+  //             Read more
+  //              <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+  //                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+  //             </svg>
+  //         </a>
+  //     </div>
+  // </div>
+
+}
+//TODO: IMPORTANT! Create a main layout. This should be my portfolio.
+//Idea: This page should be navigatable in one instance.
+//Link, img, title,
+
+
+
 export default function Home() {
   return (
     <div className="">
       <h1 className="text-center text-sans text-6xl">
         Front End Mentor challenges
       </h1>
-      {challenges.map((challenge, index) => (
-        <MentorCard key={index} />
-      ))}
+      <div className="grid grid-cols-5 gap-4 mx-20 my-10">
+
+        {challengeData.map((challenge, index) => (
+          <MentorCard key={index} {...challenge} />
+        ))}
+      </div>
     </div>
-  );
+  )
 }
