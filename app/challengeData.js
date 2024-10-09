@@ -1,9 +1,13 @@
 export const challengeData = [
+    //TODO: Start deleting the actual projects/
+    //contact form
+    //email success
+    //netlify (?)
 
 
 
     // { 
-    //        TODO: Daily challenge
+    //        TODO: Daily challenge: not even started
     //       link: "/recipe-page", 
     //       image: "", 
     //       level: "Newbie", 
@@ -12,103 +16,59 @@ export const challengeData = [
     //       status: "TODO" 
     //     },
     {
-        //TODO: Daily challenge
         link: "/profile-links",
         image: "/aaaCardImages/newbie/desktop-design2.jpg",
         level: 1,
-        levelTag: "超初級",
         title: "Social links profile",
         content: "Design a social profile card with links to social media.",
         status: "ok"
     },
-    {
-        //TODO: Daily challenge
-        link: "/profile-links",
-        image: "/aaaCardImages/newbie/desktop-design2.jpg",
-        level: 2,
-        levelTag: "超初級",
-        title: "Social links profile",
-        content: "Design a social profile card with links to social media.",
-        status: "ok"
-    },
-    {
-        //TODO: Daily challenge
-        link: "/profile-links",
-        image: "/aaaCardImages/newbie/desktop-design2.jpg",
-        level: 3,
-        levelTag: "超初級",
-        title: "Social links profile",
-        content: "Design a social profile card with links to social media.",
-        status: "ok"
-    },
-    {
-        //TODO: Daily challenge
-        link: "/profile-links",
-        image: "/aaaCardImages/newbie/desktop-design2.jpg",
-        level: 4,
-        levelTag: "超初級",
-        title: "Social links profile",
-        content: "Design a social profile card with links to social media.",
-        status: "ok"
-    },
-    {
-        //TODO: Daily challenge
-        link: "/profile-links",
-        image: "/aaaCardImages/newbie/desktop-design2.jpg",
-        level: 5,
-        levelTag: "超初級",
-        title: "Social links profile",
-        content: "Design a social profile card with links to social media.",
-        status: "ok"
-    },
-    //   { 
-    //     //TODO: Daily challenge
-    //     link: "/blog-preview-card", 
-    //     image: "", 
-    //     level: "Newbie", 
-    //     title: "Blog preview card", 
-    //     content: "Create a card that previews a blog article with an image and summary.", 
-    //     status: "TODO" 
-    //   },
-    //   { 
-    //     //TODO: Daily challenge
-    //     link: "/faq-accordion", 
-    //     image: "", 
-    //     level: "Newbie", 
-    //     title: "FAQ accordion", 
-    //     content: "Build an FAQ section with expandable answers.", 
-    //     status: "TODO" 
-    //   },
-    //   { 
-    //     //TODO: Daily challenge
-    //     link: "/workit-landing-page", 
-    //     image: "", 
-    //     level: "Newbie", 
-    //     title: "Workit landing page", 
-    //     content: "Design a landing page for a fitness application.", 
-    //     status: "TODO" 
-    //   },
-    //   { 
-    //     //TODO: Daily challenge
-    //     link: "/results-summary-component", 
-    //     image: "", 
-    //     level: "Newbie", 
-    //     title: "Results summary component", 
-    //     content: "Create a component summarizing test results with visual indicators.", 
-    //     status: "TODO" 
-    //   },
-    //   { 
-    //             //TODO: Daily challenge
 
-    //     link: "/product-preview-card", 
-    //     image: "", 
-    //     level: "Newbie", 
-    //     title: "Product preview card", 
-    //     content: "Design a card displaying product details, price, and image.", 
-    //     status: "TODO" 
-    //   },
+    {
+        link: "/blog-preview-card",
+        image: "/aaaCardImages/newbie/desktop-design3.jpg",
+        level: 1,
+        title: "Blog preview card",
+        content: "Create a card that previews a blog article with an image and summary.",
+        status: "ok"
+    },
+    {
+        link: "/faq-accordion",
+        image: "/aaaCardImages/newbie/desktop-design4.jpg",
+        level: 1,
+        title: "FAQ accordion",
+        content: "Build an FAQ section with expandable answers.",
+        status: "ok"
+    },
+    // {
+    //     // (Premium challenge)
+    //     link: "/workit-landing-page",
+    //     image: "",
+    //     level: "Newbie",
+    //     title: "Workit landing page",
+    //     content: "Design a landing page for a fitness application.",
+    //     status: "TODO"
+    // },
+    {
+        //Challenge No. 6
+        link: "/results-summary",
+        image: "/aaaCardImages/newbie/desktop-design6.jpg",
+        level: 1,
+        title: "Results summary",
+        content: "Create a component summarizing test results with visual indicators.",
+        status: "ok"
+    },
+    {
+        //Challenge No. 7
+        link: "/product-preview-card",
+        image: "/aaaCardImages/newbie/desktop-design7.jpg",
+        level: 1,
+        title: "Product preview card",
+        content: "Design a card displaying product details, price, and image.",
+        status: "ok"
+    },
     //   { 
-    //             //TODO: Daily challenge
+    //             //Premium challengee
 
     //     link: "/skilled-elearning", 
     //     image: "", 
@@ -117,38 +77,35 @@ export const challengeData = [
     //     content: "Build a landing page for an e-learning platform.", 
     //     status: "TODO" 
     //   },
+    {
+        //Challenge No. 9
+        link: "/interactive-rating",
+        image: "/aaaCardImages/newbie/desktop-design9.jpg",
+        level: 1,
+        title: "Interactive rating component",
+        content: "Create a rating component that updates based on user selection.",
+        status: "ok"
+    },
+    {
+        //Challenge No. 10
+        link: "/qr-code",
+        image: "/aaaCardImages/newbie/desktop-design10.jpg",
+        level: 1,
+        title: "QR code component",
+        content: "Create a simple card containing a QR code and instructions.",
+        status: "ok"
+    },
+    {
+        //Challenge No. 11
+        link: "/nft-card",
+        image: "/aaaCardImages/newbie/desktop-design11.jpg",
+        level: 1,
+        title: "NFT preview card",
+        content: "Design a card previewing an NFT with metadata and visual.",
+        status: "ok"
+    },
     //   { 
-    //             //TODO: Daily challenge
-
-    //     link: "/interactive-rating", 
-    //     image: "", 
-    //     level: "Newbie", 
-    //     title: "Interactive rating component", 
-    //     content: "Create a rating component that updates based on user selection.", 
-    //     status: "TODO" 
-    //   },
-    //   { 
-    //             //TODO: Daily challenge
-
-    //     link: "/qr-code-component", 
-    //     image: "", 
-    //     level: "Newbie", 
-    //     title: "QR code component", 
-    //     content: "Create a simple card containing a QR code and instructions.", 
-    //     status: "TODO" 
-    //   },
-    //   { 
-    //             //TODO: Daily challenge
-
-    //     link: "/nft-preview-card", 
-    //     image: "", 
-    //     level: "Newbie", 
-    //     title: "NFT preview card", 
-    //     content: "Design a card previewing an NFT with metadata and visual.", 
-    //     status: "TODO" 
-    //   },
-    //   { 
-    //             //TODO: Daily challenge
+    //Premium challenge.
 
     //     link: "/equalizer-landing-page", 
     //     image: "", 
@@ -157,29 +114,29 @@ export const challengeData = [
     //     content: "Create a landing page for an equalizer tool.", 
     //     status: "TODO" 
     //   },
+    {
+        //Challenge No. 12
+        link: "/order-summary",
+        image: "/aaaCardImages/newbie/desktop-design12.jpg",
+        level: 1,
+        title: "Order summary component",
+        content: "Design a card that summarizes an order with pricing details.",
+        status: "ok"
+    },
+    {
+        //TODO: Daily challenge: complete it
+        //Challenge No. 13
+        link: "/stats-preview-card",
+        image: "",
+        image: "/aaaCardImages/newbie/desktop-design13.jpg",
+        level: 1,
+        title: "Stats preview card component",
+        content: "Build a card that previews key statistics with visuals.",
+        status: "ok"
+    },
     //   { 
-    //             //TODO: Daily challenge
-
-    //     link: "/order-summary", 
-    //     image: "", 
-    //     level: "Newbie", 
-    //     title: "Order summary component", 
-    //     content: "Design a card that summarizes an order with pricing details.", 
-    //     status: "TODO" 
-    //   },
-    //   { 
-    //             //TODO: Daily challenge
-
-    //     link: "/stats-preview-card", 
-    //     image: "", 
-    //     level: "Newbie", 
-    //     title: "Stats preview card component", 
-    //     content: "Build a card that previews key statistics with visuals.", 
-    //     status: "TODO" 
-    //   },
-    //   { 
-    //             //TODO: Daily challenge
-
+    // Premium challenge
+    //Challenge No. 14
     //     link: "/meet-landing-page", 
     //     image: "", 
     //     level: "Newbie", 
@@ -188,7 +145,8 @@ export const challengeData = [
     //     status: "TODO" 
     //   },
     //   { 
-    //             //TODO: Daily challenge
+    //             //TODO: Daily challenge, not even started
+    //Challenge No. 15
 
     //     link: "/3-column-preview-card", 
     //     image: "", 
@@ -198,7 +156,8 @@ export const challengeData = [
     //     status: "TODO" 
     //   },
     //   { 
-    //             //TODO: Daily challenge
+    //             //Premium Challenge
+    //Challenge No. 16
 
     //     link: "/pod-request-access", 
     //     image: "", 
@@ -207,36 +166,34 @@ export const challengeData = [
     //     content: "Build a page for requesting access to a private podcast.", 
     //     status: "TODO" 
     //   },
-    //   { 
-    //             //TODO: Daily challenge
-
-    //     link: "/profile-card-component", 
-    //     image: "", 
-    //     level: "Newbie", 
-    //     title: "Profile card component", 
-    //     content: "Create a profile card with user information and image.", 
-    //     status: "TODO" 
-    //   },
-    //   { 
-    //             //TODO: Daily challenge
-
-    //     link: "/social-proof-section", 
-    //     image: "", 
-    //     level: "Newbie", 
-    //     title: "Social proof section", 
-    //     content: "Design a section showcasing user testimonials or reviews.", 
-    //     status: "TODO" 
-    //   },
-    //   { 
-    //             //TODO: Daily challenge
-
-    //     link: "/article-preview-component", 
-    //     image: "", 
-    //     level: "Newbie", 
-    //     title: "Article preview component", 
-    //     content: "Create a card that previews an article with image and summary.", 
-    //     status: "TODO" 
-    //   },
+    {
+        //             //TODO: Daily challenge: We are missing the circles!
+        //Challenge No. 17
+        link: "/profile-card",
+        image: "/aaaCardImages/newbie/desktop-design17.jpg",
+        level: 1,
+        title: "Profile card",
+        content: "Create a profile card with user information and image.",
+        status: "ok"
+    },
+    {
+        //Challenge No. 18
+        link: "/social-proof",
+        image: "/aaaCardImages/newbie/desktop-design18.jpg",
+        level: 1,
+        title: "Social proof section",
+        content: "Design a section showcasing user testimonials or reviews.",
+        status: "ok"
+    },
+    {
+        //Challenge No. 19
+        link: "/article-preview",
+        image: "/aaaCardImages/newbie/desktop-design19.jpg",
+        level: 1,
+        title: "Article preview component",
+        content: "Create a card that previews an article with image and summary.",
+        status: "ok"
+    },
     //   { 
     //             //TODO: Daily challenge
 
@@ -247,16 +204,15 @@ export const challengeData = [
     //     content: "Design a section displaying four featured cards.", 
     //     status: "TODO" 
     //   },
-    //   { 
-    //             //TODO: Daily challenge
-
-    //     link: "/base-apparel-coming-soon", 
-    //     image: "", 
-    //     level: "Newbie", 
-    //     title: "Base Apparel coming soon page", 
-    //     content: "Build a 'coming soon' page for a clothing brand.", 
-    //     status: "TODO" 
-    //   },
+    {
+        // Challenge No. 21
+        link: "/base-apparel",
+        image: "/aaaCardImages/newbie/desktop-design21.jpg",
+        level: 1,
+        title: "Base Apparel coming soon page",
+        content: "Build a 'coming soon' page for a base apparel brand.",
+        status: "ok"
+    },
     //   { 
     //             //TODO: Daily challenge
 
