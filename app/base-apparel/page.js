@@ -1,9 +1,9 @@
-"use client";
-import Image from "next/image";
-import { Josefin_Sans } from "next/font/google";
-import clsx from "clsx";
-import { useState } from "react";
-const josefinSans = Josefin_Sans({ subsets: ["latin"] });
+"use client"
+import clsx from "clsx"
+import { Josefin_Sans } from "next/font/google"
+import Image from "next/image"
+import { useState } from "react"
+const josefinSans = Josefin_Sans({ subsets: ["latin"] })
 
 function Background({ children }) {
   return (
@@ -17,7 +17,7 @@ function Background({ children }) {
         />
       </div>
     </>
-  );
+  )
 }
 function Logo() {
   return (
@@ -41,7 +41,7 @@ function Logo() {
         />
       </g>
     </svg>
-  );
+  )
 }
 function Content() {
   return (
@@ -57,7 +57,7 @@ function Content() {
         our launch deals.
       </p>
     </div>
-  );
+  )
 }
 function LadyHero() {
   const styles = clsx(
@@ -66,49 +66,49 @@ function LadyHero() {
     "bg-[url('/base-apparel/images/hero-mobile.jpg')] sm:bg-[url('/base-apparel/images/hero-desktop.jpg')]",
     "sm:col-start-2 sm:row-start-1 sm:row-end-3",
     "    "
-  );
-  return <div className={styles} />;
+  )
+  return <div className={styles} />
 }
 
 function Input() {
-  const [status, setStatus] = useState(null);
-  const [error, setError] = useState("");
+  const [status, setStatus] = useState(null)
+  const [error, setError] = useState("")
   const inputStyles = clsx(
     "w-full h-12 py-4 px-6",
     "bg-transparent text-red-950/40",
     "placeholder:text-red-950/20 placeholder:text-sm",
     "border border-red-950/40",
     "rounded-full"
-  );
+  )
 
   const handleFormSubmit = async (event) => {
-    event.preventDefault();
+    event.preventDefault()
     try {
-      setStatus("pending");
-      setError(null);
-      const myForm = event.target;
-      const formData = new FormData(myForm);
+      setStatus("pending")
+      setError(null)
+      const myForm = event.target
+      const formData = new FormData(myForm)
       const res = await fetch("/__forms.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData).toString(),
-      });
+      })
       if (res.status === 200) {
-        setStatus("ok");
+        setStatus("ok")
       } else {
-        setStatus("error");
-        setError(`${res.status} ${res.statusText}`);
-        console.log("error");
+        setStatus("error")
+        setError(`${res.status} ${res.statusText}`)
+        console.log("error")
       }
     } catch (e) {
-      setStatus("error");
-      setError(`${e}`);
-      console.log(e);
+      setStatus("error")
+      setError(`${e}`)
+      console.log(e)
     }
-  };
+  }
 
   //Review added email "id" and "name" props
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState("")
   return (
     <div className=" w-[80%] mx-auto relative h-fit">
       <form
@@ -128,7 +128,7 @@ function Input() {
           placeholder="Email Address"
           className={inputStyles}
           onChange={(e) => {
-            setValue(e.target.value);
+            setValue(e.target.value)
           }}
           value={value}
         />
@@ -150,13 +150,10 @@ function Input() {
         </button>
       </form>
     </div>
-  );
+  )
 }
 
 function Page() {
-  //TODO: Send an email with netlify forms. Handle errors and verify how Netlify works
-  //TODO verify that we can actually send some data.
-  //TODO: Try subscribing to React email's free plan, and create a marked email.
 
   return (
     <div className="w-screen h-screen bg-rose-50 mx-auto grid grid-cols-1 ">
@@ -179,7 +176,7 @@ function Page() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Page;
+export default Page

@@ -194,16 +194,16 @@ export const challengeData = [
         content: "Create a card that previews an article with image and summary.",
         status: "ok"
     },
-    //   { 
-    //             //TODO: Daily challenge
+    {
+        //TODO: Daily challenge
 
-    //     link: "/four-card-feature", 
-    //     image: "", 
-    //     level: "Newbie", 
-    //     title: "Four card feature section", 
-    //     content: "Design a section displaying four featured cards.", 
-    //     status: "TODO" 
-    //   },
+        link: "/four-card-feature",
+        image: "/aaaCardImages/newbie/desktop-design20.jpg",
+        level: 1,
+        title: "Four card feature section",
+        content: "Design a section displaying four featured cards.",
+        status: "ok"
+    },
     {
         // Challenge No. 21
         link: "/base-apparel",

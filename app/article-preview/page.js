@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/image"
 function IconShare() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13">
@@ -7,7 +7,7 @@ function IconShare() {
         d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"
       />
     </svg>
-  );
+  )
 }
 function CardHeader() {
   return (
@@ -19,7 +19,7 @@ function CardHeader() {
         alt=""
       />
     </div>
-  );
+  )
 }
 function CardBody() {
   return (
@@ -34,12 +34,11 @@ function CardBody() {
         make any room feel complete.
       </p>
     </>
-  );
+  )
 }
 function CardFooter() {
   //TODO share menu with some code that actually works
   //TODO set an open state and show amazingly the options.
-  //TODO install framer motion into the project. It may be handy from now on.
   return (
     <div className="mt-6 w-full flex justify-between items-center">
       <div className="flex gap-2 items-center">
@@ -64,7 +63,7 @@ function CardFooter() {
         <IconShare />
       </div>
     </div>
-  );
+  )
 }
 function Card() {
   return (
@@ -75,7 +74,7 @@ function Card() {
         <CardFooter />
       </div>
     </div>
-  );
+  )
 }
 function Page() {
   return (
@@ -84,7 +83,7 @@ function Page() {
         <Card />
       </div>
     </div>
-  );
+  )
 }
 
-export default Page;
+export default Page

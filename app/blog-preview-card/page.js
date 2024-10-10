@@ -4,15 +4,15 @@
 // These languages are the backbone of every website, defining structure, content, and presentation.
 // Greg Hooper
 
-import clsx from "clsx";
-import Image from "next/image";
+import clsx from "clsx"
+import Image from "next/image"
 
 function Page() {
   const cardStyles = clsx(
     "bg-white relative flex flex-col gap-2 h-fit w-80 p-4",
     "border border-black rounded-xl",
-    "drop-shadow-[5px_5px_0px_rgba(0,0,0,1)]" //TODO we may have to add this drop shadow manually each time we work with tailwind
-  );
+    "drop-shadow-[5px_5px_0px_rgba(0,0,0,1)]"
+  )
 
   return (
     <div className="bg-amber-300 h-screen w-screen flex  items-center justify-center">
@@ -51,7 +51,7 @@ function Page() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Page;
+export default Page

@@ -1,22 +1,21 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import FieldGroup from "./FieldGroup";
-import { FormProvider, useForm } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form"
+import FieldGroup from "./FieldGroup"
 
 function Grid({ children }) {
-  return <div className="grid grid-cols-1 gap-5 py-4">{children}</div>;
+  return <div className="grid grid-cols-1 gap-5 py-4">{children}</div>
 }
 
 function Page() {
   //State
-  const formMethods = useForm({ mode: "onChange" });
+  const formMethods = useForm({ mode: "onChange" })
   const {
     handleSubmit,
     reset,
     trigger,
     formState: { errors },
-  } = formMethods; //TODO we might need errors here
+  } = formMethods
 
   //   const [status, setStatus] = useState(null);
   //   const [error, setError] = useState(null);
@@ -24,15 +23,14 @@ function Page() {
   //Handlers
   //This function works on Netlify!
   const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    //TODO Get the errors, return if there are some
-    //TODO
-    trigger();
+    event.preventDefault()
+
+    trigger()
 
     if (Object.keys(errors).length > 0) {
-      console.log("Errors!");
-      console.log(errors);
-      return;
+      console.log("Errors!")
+      console.log(errors)
+      return
     }
     //1. Sending the request to netlify.
     //This works!
@@ -62,16 +60,9 @@ function Page() {
     //   //   setError(`${e}`);
     // }
 
-    //TODO: 2. Writing to Google Spreadsheet
-    //TODO: 3. Sending email to Maikagura
-    //TODO: 4 Sending a marked up email to the user (a feedback bot.)
-  };
+  }
 
-  //TODO ideas de API. (TODAS deberían resultar)
-  //Google Spread sheet.
-  //Netlify registration OR Vercel registration.
-  //Email sender.
-  //Supabase
+
   return (
     <div className="w-screen h-screen bg-emerald-50 grid place-content-center">
       <div className="bg-white w-11/12  h-fit p-6">
@@ -79,14 +70,13 @@ function Page() {
           <form
             onSubmit={handleFormSubmit}
             name="contact-form"
-            // method="POST"
-            // data-netlify="true"
-            // action="/"
-            // id="contact-form"
+          // method="POST"
+          // data-netlify="true"
+          // action="/"
+          // id="contact-form"
           >
             {/* Note: value of the next input must match the form name */}
             <input type="hidden" name="form-name" value="contact-form" />
-            {/* TODO we may want to build static files. build: next build && next export */}
             <h1 className="text-emerald-950 text-3xl font-bold">Contact Us</h1>
             <Grid>
               <FieldGroup
@@ -116,7 +106,7 @@ function Page() {
         </FormProvider>
       </div>
     </div>
-  );
+  )
 }
 
-export default Page;
+export default Page
