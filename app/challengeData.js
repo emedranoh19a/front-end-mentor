@@ -16,7 +16,7 @@ export const challengeData = [
     //       status: "TODO" 
     //     },
     {
-        link: "/profile-links",
+        link: "/newbie/profile-links",
         image: "/aaaCardImages/newbie/desktop-design2.jpg",
         level: 1,
         title: "Social links profile",
@@ -25,7 +25,7 @@ export const challengeData = [
     },
 
     {
-        link: "/blog-preview-card",
+        link: "/newbie/blog-preview-card",
         image: "/aaaCardImages/newbie/desktop-design3.jpg",
         level: 1,
         title: "Blog preview card",
@@ -33,7 +33,7 @@ export const challengeData = [
         status: "ok"
     },
     {
-        link: "/faq-accordion",
+        link: "/newbie/faq-accordion",
         image: "/aaaCardImages/newbie/desktop-design4.jpg",
         level: 1,
         title: "FAQ accordion",
@@ -51,7 +51,7 @@ export const challengeData = [
     // },
     {
         //Challenge No. 6
-        link: "/results-summary",
+        link: "/newbie/results-summary",
         image: "/aaaCardImages/newbie/desktop-design6.jpg",
         level: 1,
         title: "Results summary",
@@ -60,7 +60,7 @@ export const challengeData = [
     },
     {
         //Challenge No. 7
-        link: "/product-preview-card",
+        link: "/newbie/product-preview-card",
         image: "/aaaCardImages/newbie/desktop-design7.jpg",
         level: 1,
         title: "Product preview card",
@@ -79,7 +79,7 @@ export const challengeData = [
     //   },
     {
         //Challenge No. 9
-        link: "/interactive-rating",
+        link: "/newbie/interactive-rating",
         image: "/aaaCardImages/newbie/desktop-design9.jpg",
         level: 1,
         title: "Interactive rating component",
@@ -88,7 +88,7 @@ export const challengeData = [
     },
     {
         //Challenge No. 10
-        link: "/qr-code",
+        link: "/newbie/qr-code",
         image: "/aaaCardImages/newbie/desktop-design10.jpg",
         level: 1,
         title: "QR code component",
@@ -97,7 +97,7 @@ export const challengeData = [
     },
     {
         //Challenge No. 11
-        link: "/nft-card",
+        link: "/newbie/nft-card",
         image: "/aaaCardImages/newbie/desktop-design11.jpg",
         level: 1,
         title: "NFT preview card",
@@ -116,7 +116,7 @@ export const challengeData = [
     //   },
     {
         //Challenge No. 12
-        link: "/order-summary",
+        link: "/newbie/order-summary",
         image: "/aaaCardImages/newbie/desktop-design12.jpg",
         level: 1,
         title: "Order summary component",
@@ -126,7 +126,7 @@ export const challengeData = [
     {
         //TODO: Daily challenge: complete it
         //Challenge No. 13
-        link: "/stats-preview-card",
+        link: "/newbie/stats-preview-card",
         image: "",
         image: "/aaaCardImages/newbie/desktop-design13.jpg",
         level: 1,
@@ -169,7 +169,7 @@ export const challengeData = [
     {
         //             //TODO: Daily challenge: We are missing the circles!
         //Challenge No. 17
-        link: "/profile-card",
+        link: "/newbie/profile-card",
         image: "/aaaCardImages/newbie/desktop-design17.jpg",
         level: 1,
         title: "Profile card",
@@ -178,7 +178,7 @@ export const challengeData = [
     },
     {
         //Challenge No. 18
-        link: "/social-proof",
+        link: "/newbie/social-proof",
         image: "/aaaCardImages/newbie/desktop-design18.jpg",
         level: 1,
         title: "Social proof section",
@@ -187,7 +187,7 @@ export const challengeData = [
     },
     {
         //Challenge No. 19
-        link: "/article-preview",
+        link: "/newbie/article-preview",
         image: "/aaaCardImages/newbie/desktop-design19.jpg",
         level: 1,
         title: "Article preview component",
@@ -195,9 +195,9 @@ export const challengeData = [
         status: "ok"
     },
     {
-        //TODO: Daily challenge
 
-        link: "/four-card-feature",
+
+        link: "/newbie/four-card-feature",
         image: "/aaaCardImages/newbie/desktop-design20.jpg",
         level: 1,
         title: "Four card feature section",
@@ -206,7 +206,7 @@ export const challengeData = [
     },
     {
         // Challenge No. 21
-        link: "/base-apparel",
+        link: "/newbie/base-apparel",
         image: "/aaaCardImages/newbie/desktop-design21.jpg",
         level: 1,
         title: "Base Apparel coming soon page",

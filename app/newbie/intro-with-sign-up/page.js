@@ -6,7 +6,7 @@ export default function Page() {
     return <main className="bg-[url('/intro-with-sign-up/images/bg-intro-mobile.png')] bg-cover max-w-screen min-h-screen bg-red-400/80 text-neutral-50">
 
         {/* TODO: this is a simple grid to be responsive, two columns on big screen */}
-        <div>
+        <div className="mx-auto my-auto w-fit grid grid-cols-1 md:grid-cols-2">
 
             <Intro />
             <Form />
