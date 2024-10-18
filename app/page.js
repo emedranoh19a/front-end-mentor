@@ -76,7 +76,7 @@ export default function Home() {
   return (
     <div className="max-w-screen w-fit mx-auto">
       <h1 className="text-center text-sans text-5xl my-10">
-        Feast your eyes on Eric's magic!      </h1>
+        Feast your eyes on Eric&apos;s magic!      </h1>
       <h2 className="text-center text-sans text-3xl my-10">
         Front End Mentor challenges (with TailwindCSS + NextJS)
       </h2>
@@ -101,7 +101,7 @@ export default function Home() {
       <NetlifyLink href="https://emedranoh19a.github.io/WEBDev_Part2_CSS/ " text="CSS + HTML: The Complete Web Development Bootcamp course on Udemy (Instructor: Dr. Angela Yu). Who would’ve thought I'd one day be so mesmerized by the wonders of CSS? Back then, it was just me and plain HTML, no idea I’d soon be lost in a world of styling sorcery!" />
       <NetlifyLink href="https://emedranoh19a.github.io/WEBDev_Part3_Bootstrap/ " text="Bootstrap: The Complete Web Development Bootcamp course on Udemy (Instructor: Dr. Angela Yu).  Ah, little me—head over heels for Bootstrap like a teenager caught in their first crush. Back then, I was hopelessly devoted, blissfully unaware of the vast, beautiful world of frameworks and design waiting just beyond the horizon." />
       <NetlifyLink href="https://emedranoh19a.github.io/WEBDeb_Part5_JavaScript/ " text="JS (or JQuery?): The Complete Web Development Bootcamp course on Udemy (Instructor: Dr. Angela Yu).  This one was useless, and I remember striggling back then. Poor young me, I promise more challenging things are coming up!" />
-      And I have made more! but let's keep it here!
+      And I have made more! but let&apos;s keep it here!
     </div>
   )
 }
