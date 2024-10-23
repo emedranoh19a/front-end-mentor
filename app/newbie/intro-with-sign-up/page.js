@@ -41,7 +41,7 @@ function ClaimTrialButton() {
 }
 
 function TryFreeButton() {
-    return <button className="bg-indigo-500/90 font-thin w-full text-center rounded-lg py-4">
+    return <button className="bg-indigo-500/90 font-thin w-full inset-x-4  text-center rounded-lg py-4">
         <strong className="font-bold">
             Try it free for 7 days{" "}
         </strong>
